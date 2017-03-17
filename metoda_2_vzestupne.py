@@ -1,0 +1,59 @@
+# -*- coding: cp1250 -*-
+
+# Poadavky :
+#
+# 1. Vstup: Adresáø tia a v nìm soubory manualni.scp a train.scp
+# 2. Pøístup k modelu HDM v datovém úloišti metacentrum
+
+# Vıstup: Graf závislosti Acc na mnozstvi trenovacich dat
+
+import matplotlib.pyplot as plt
+import numpy as np
+import scipy
+import random
+import os
+import paramiko
+import funkce_DP
+
+metoda_text = ['SCORE_final','metoda2/best','metoda2']
+
+procenta = [10]
+
+#### PØÍPRAVA DAT
+#### -----------
+#### 10% test, 90% train
+##funkce_DP.prepare_data(metoda_text)
+
+#### SPUS ÚLOHU
+#### -----------
+#### Vytvoøení konfigurací, spouštìcích skriptù a odeslání úloh do metacentra
+##funkce_DP.metacentrum(metoda_text,procenta)
+
+
+procenta = [20,30,50]
+
+#### PROVEÏ STRATEGII
+#### ----------------
+#### øazení vzestupnì
+##
+##sestupne = False
+##orez7 = False
+##orez50 = False
+##funkce_DP.strategy_P(metoda_text, procenta, sestupne, orez7, orez50)
+
+#### SPUS ÚLOHY
+#### -----------
+#### Vytvoøení konfigurací, spouštìcích skriptù a odeslání úloh do metacentra
+##funkce_DP.metacentrum(metoda_text,procenta)
+
+## VYHODNOCENÍ DAT 
+## ---------------
+popisek_graph = u'Selekce neurèitıch dat'
+funkce_DP.draw_graph(metoda_text, popisek_graph)
+
+
+
+
+
+
+
